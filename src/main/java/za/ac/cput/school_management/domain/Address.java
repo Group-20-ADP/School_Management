@@ -18,5 +18,5 @@ public class Address {
     private int postalCode;
 
     //@Embedded
-    private City city;
+    //private City city;
 }
