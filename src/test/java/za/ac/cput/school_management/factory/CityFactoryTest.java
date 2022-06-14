@@ -24,7 +24,7 @@ class CityFactoryTest {
 
     void createCity() {
 
-        var city = CityFactory.createCity("2587946", "Cape Town",);
+        var city = CityFactory.createCity("2587946", "Cape Town");
         assertNotNull (city);
         System.out.println(city);
     }

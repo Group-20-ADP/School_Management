@@ -9,11 +9,10 @@ package za.ac.cput.school_management.factory;
  */
 
 import za.ac.cput.school_management.domain.City;
-import za.ac.cput.school_management.domain.Country;
 
 public class CityFactory {
 
-    public static City createCity(String cityId, String cityName, Country country) {
+    public static City createCity(String cityId, String cityName) {
 
         if (cityId == null)
             return null;
@@ -21,13 +20,11 @@ public class CityFactory {
         if (cityName == null)
             return null;
 
-        if (country == null)
-            return null;
+
 
         return  City.builder()
                 .cityId(cityId)
                 .cityName(cityName)
-                .country(country)
                 .build();
 
 
