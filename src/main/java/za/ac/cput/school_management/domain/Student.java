@@ -1,12 +1,11 @@
 package za.ac.cput.school_management.domain;
 
 
+import com.sun.istack.NotNull;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,23 +13,13 @@ import javax.persistence.*;
 @Table(name = "STUDENT")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "system-uuid",strategy = "uuid")
-
+    @NotNull
     @Column(name = "studentId", updatable = false,nullable = false, length = 50)
     private String studentId;
-
     @Column(name = "email", updatable = false,nullable = false, length = 50)
-
     private String email;
     @Embedded
-
     private Name name;
-
-
-
-
-
 
 
 }
