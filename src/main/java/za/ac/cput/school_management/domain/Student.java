@@ -11,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "STUDENT")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,44 +27,10 @@ public class Student {
 
     private Name name;
 
-    private Student(Builder builder){
-        this.studentId =builder.studentId;
-        this.email = builder.email;
-        this.name = builder.name;
-    }
-    public static class Builder{
-        private String studentId, email;
-        private Name name;
-
-        public Builder studentId(String studentId){
-            this.studentId = studentId;
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "Builder{" +
-                    "studentId='" + studentId + '\'' +
-                    ", email='" + email + '\'' +
-                    ", name=" + name +
-                    '}';
-        }
-
-        public Builder email(String email){
-            this.email = email;
-            return this;
-        }
 
 
 
-        public Builder name(Name name){
-            this.name = name;
-            return this;
-        }
 
-        public Student build(){
-            return new Student(this);
-        }
-    }
+
 
 }
