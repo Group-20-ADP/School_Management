@@ -1,8 +1,7 @@
 package za.ac.cput.school_management.domain;
 
+import com.sun.istack.NotNull;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Data
@@ -13,9 +12,8 @@ import javax.persistence.*;
 @Table(name = "EMPLOYEE")
 public class Employee {
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name = "staff_id", updatable = false,nullable = false, length = 50)
+    @NotNull
+    @Column(name = "staff_id", unique = true, updatable = false,nullable = false, length =36 )
     private String staffId;
     @Column(name = "email", updatable = false,nullable = false, length = 50)
     private String email;
