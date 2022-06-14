@@ -53,8 +53,8 @@ public class EmployeeService  {
     }
 
     //FindByEmail Service Unattended!!
-    public Optional<Employee> findByEmail(String email){
-        return null;
+    public List<String> findByEmail(String email) {
+        return employeeRepository.findByEmail(email);
     }
 
     //FindAllByCity Service Unattended!!

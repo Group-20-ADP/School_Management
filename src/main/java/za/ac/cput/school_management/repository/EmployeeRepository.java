@@ -6,10 +6,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.Employee;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
-    @Query("select u from Employee as u where u.email = :email")
-    Optional<Employee> findByEmail(@Param("email") String email);
+    @Query("select e.name.firstName from Employee e where e.email = :email")
+    List<String> findByEmail(@Param(value = "email") String email);
 }
