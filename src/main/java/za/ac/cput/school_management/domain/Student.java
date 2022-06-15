@@ -1,6 +1,10 @@
+/**
+ * Athini Mbiko
+ * 213196379
+ * Student Domain
+ */
+
 package za.ac.cput.school_management.domain;
-
-
 import com.sun.istack.NotNull;
 import lombok.*;
 
