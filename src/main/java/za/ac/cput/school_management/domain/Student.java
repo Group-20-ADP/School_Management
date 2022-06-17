@@ -1,16 +1,13 @@
 package za.ac.cput.school_management.domain;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import za.ac.cput.school_management.domain.ValueObjects.Name;
+import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.domain.valueobject.name;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
-import com.sun.istack.NotNull;
-import lombok.*;
-
-import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -25,8 +22,8 @@ public class Student implements Serializable {
             length = 10
     )
     private String studentId;
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
     private StudentAddress studentAddress;
 
     @Column(
