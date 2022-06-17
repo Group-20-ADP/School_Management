@@ -11,6 +11,7 @@ import za.ac.cput.school_management.repository.StudentRepository;
 import za.ac.cput.school_management.service.IStudent;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentImpl implements IStudent {
 
@@ -22,8 +23,11 @@ public class StudentImpl implements IStudent {
     }
 
     @Override
-    public Student read(String StudentId) {
-         return repository.findById(StudentId).orElse(null);
+    public Optional<Student> readById(String studentId) {
+        if(!studentId.equals(null)){
+            repository.findById(studentId);
+        }
+        return null;
     }
 
     @Override
@@ -35,5 +39,10 @@ public class StudentImpl implements IStudent {
     public void delete(String StudentId) {
         repository.deleteById(StudentId);
 
+    }
+
+    @Override
+    public List<Student> findLastnameByCountryId(String countryId) {
+        return null;
     }
 }
