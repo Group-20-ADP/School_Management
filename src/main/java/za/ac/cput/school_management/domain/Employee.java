@@ -1,6 +1,10 @@
 package za.ac.cput.school_management.domain;
+/**
+ * Author       : Kurtney Clyde Jantjies 218138105
+ * Due Created : 18/06/2022
+ * Description  : School Management System(Milestone Project)
+ */
 
-import com.sun.istack.NotNull;
 import lombok.*;
 import za.ac.cput.school_management.domain.valueobjects.Name;
 import javax.persistence.*;
@@ -14,8 +18,7 @@ import java.io.Serializable;
 @Table(name = "employee")
 public class Employee implements Serializable {
     @Id
-    @NotNull
-    @Column(name = "staff_id", length = 10)
+    @Column(            name = "staff_id", length = 10)
     private String staffId;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "staff_id")
