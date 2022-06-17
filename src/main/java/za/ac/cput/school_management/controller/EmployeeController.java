@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.service.EmployeeService;
+import za.ac.cput.school_management.service.implementation.EmployeeService;
 
 import java.util.List;
 

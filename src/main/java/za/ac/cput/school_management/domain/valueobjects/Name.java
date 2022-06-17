@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.valueobjects;
 
 import com.sun.istack.NotNull;
 import lombok.*;

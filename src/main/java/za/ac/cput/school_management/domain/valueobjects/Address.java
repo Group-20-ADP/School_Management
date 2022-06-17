@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.valueobjects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

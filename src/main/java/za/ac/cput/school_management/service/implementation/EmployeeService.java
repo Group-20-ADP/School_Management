@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.service;
+package za.ac.cput.school_management.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;

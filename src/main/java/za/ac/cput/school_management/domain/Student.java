@@ -1,11 +1,9 @@
 package za.ac.cput.school_management.domain;
+import za.ac.cput.school_management.domain.valueobjects.Name;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import za.ac.cput.school_management.domain.StudentAddress;
-import za.ac.cput.school_management.domain.valueobject.name;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -35,3 +33,4 @@ public class Student implements Serializable {
     @Embedded
     private Name name;
 }
+
