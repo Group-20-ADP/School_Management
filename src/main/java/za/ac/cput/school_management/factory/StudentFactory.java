@@ -10,14 +10,11 @@ import za.ac.cput.school_management.domain.Student;
 import za.ac.cput.school_management.utility.Helper;
 
 public class StudentFactory {
-    public static Student createStudent(String studentId, String email, Name name){
+    public static Student createStudent(String studentId, String email, String firstName, String middleName,
+                                        String lastName){
 
-        if(!Helper.isValidEmail(email)){
-            System.out.println("Check Email!!!");
-            return null;
-        }
-
-        return   Student.builder()
+        Name name = NameFactory.createName(firstName,middleName,lastName);
+        return Student.builder()
                 .studentId(studentId)
                 .email(email)
                 .name(name)
