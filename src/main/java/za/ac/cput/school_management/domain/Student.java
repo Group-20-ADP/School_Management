@@ -1,25 +1,40 @@
 package za.ac.cput.school_management.domain;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import za.ac.cput.school_management.domain.ValueObjects.Name;
 
+import javax.persistence.*;
+import java.io.Serializable;
 
 import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Student {
-    @Id
-    @NotNull
-    @Column(name = "studentId", updatable = false,nullable = false, length = 50)
-    private String studentId;
 
-    @Column(name = "email", updatable = false,nullable = false, length = 50)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+@Table(name = "student")
+public class Student implements Serializable {
+    @Id
+    @Column(
+            name = "student_id",
+            length = 10
+    )
+    private String studentId;
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private StudentAddress studentAddress;
+
+    @Column(
+            name = "email_address",
+            length = 50
+    )
     private String email;
-    s
+
     @Embedded
     private Name name;
-
 }
