@@ -3,6 +3,7 @@ package za.ac.cput.school_management.domain;
 
 import com.sun.istack.NotNull;
 import lombok.*;
+import za.ac.cput.school_management.domain.valueobjects.Name;
 
 import javax.persistence.*;
 @Data
@@ -18,8 +19,7 @@ public class Student {
 
     @Column(name = "email", updatable = false,nullable = false, length = 50)
     private String email;
-    s
+
     @Embedded
     private Name name;
-
 }

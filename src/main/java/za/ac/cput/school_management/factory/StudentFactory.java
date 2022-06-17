@@ -1,6 +1,6 @@
 package za.ac.cput.school_management.factory;
 
-import za.ac.cput.school_management.domain.Name;
+import za.ac.cput.school_management.domain.valueobjects.Name;
 import za.ac.cput.school_management.domain.Student;
 import za.ac.cput.school_management.utility.Helper;
 
