@@ -23,4 +23,6 @@ class StudentFactoryTest {
         assertEquals("12345", student.getStudentId());
         System.out.println("student with id " + student.getStudentId() + " has been created");
     }
+
+
 }
