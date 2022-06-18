@@ -9,6 +9,14 @@ import za.ac.cput.school_management.api.CityAPI;
 import za.ac.cput.school_management.domain.City;
 import za.ac.cput.school_management.service.City.ICityService;
 
+/**
+ *
+ * Moegamad Nur Duncan
+ * 220014442
+ * City Controller
+ *
+ */
+
 import java.util.List;
 
 @RestController
