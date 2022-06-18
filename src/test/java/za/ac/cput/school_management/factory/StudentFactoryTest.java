@@ -3,7 +3,11 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.Student;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Athini Mbiko
+ * 213196379
+ * Student Factory tester
+ */
 public class StudentFactoryTest {
     @Test
     void createStudentWithInvalidEmail() {

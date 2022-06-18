@@ -4,12 +4,11 @@
  * Student Service
  */
 package za.ac.cput.school_management.service;
-import za.ac.cput.school_management.domain.EmployeeAddress;
 import za.ac.cput.school_management.domain.Student;
 
 import java.util.List;
 
-public interface IStudent {
+public interface IStudentService {
 
     Student create(Student student);
 

@@ -5,14 +5,15 @@
  */
 package za.ac.cput.school_management.service.implementation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Student;
-import za.ac.cput.school_management.repository.IEmployeeAddressRepository;
 import za.ac.cput.school_management.repository.StudentRepository;
-import za.ac.cput.school_management.service.IStudent;
+import za.ac.cput.school_management.service.IStudentService;
 
 import java.util.List;
+@Service
 
-public class StudentImpl implements IStudent {
+public class StudentImpl implements IStudentService {
 
     @Autowired
     private StudentRepository repository;
