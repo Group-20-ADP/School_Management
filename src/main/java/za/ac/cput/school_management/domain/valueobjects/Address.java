@@ -11,7 +11,10 @@ import za.ac.cput.school_management.domain.City;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

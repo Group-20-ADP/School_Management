@@ -11,7 +11,10 @@ import za.ac.cput.school_management.domain.valueobjects.Address;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
-
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
 @Getter
 @Setter
 @ToString

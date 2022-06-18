@@ -8,7 +8,10 @@ import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.StudentAddress;
 import za.ac.cput.school_management.service.Student.IStudentService;
 import za.ac.cput.school_management.service.StudentAddress.IStudentAddressService;
-
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
 @Component
 public class StudentAddressAPI {
     private final IStudentService studentService;

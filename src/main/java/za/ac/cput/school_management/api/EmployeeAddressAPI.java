@@ -1,6 +1,11 @@
 package za.ac.cput.school_management.api;
 
 
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
