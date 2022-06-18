@@ -11,13 +11,12 @@ import za.ac.cput.school_management.utility.Helper;
 
 public class StudentFactory {
     public static Student createStudent(String studentId, String email, Name name){
+        Helper.checkStringParam(studentId, "studentId");
+        Helper.checkStringParam(email, "email");
+        Helper.checkEmail(email);
+        Helper.checkIfObjectNull("name", name);
 
-        if(!Helper.isValidEmail(email)){
-            System.out.println("Check Email!!!");
-            return null;
-        }
-
-        return   Student.builder()
+        return Student.builder()
                 .studentId(studentId)
                 .email(email)
                 .name(name)
