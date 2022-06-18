@@ -2,7 +2,7 @@ package za.ac.cput.school_management.utility;
 
 import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.commons.lang3.StringUtils;
-import za.ac.cput.school_management.domain.valueobjects.Address;
+import za.ac.cput.school_management.domain.Address;
 
 import java.lang.reflect.Field;
 

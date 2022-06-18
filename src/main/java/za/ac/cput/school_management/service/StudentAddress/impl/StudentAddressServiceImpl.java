@@ -6,6 +6,8 @@ import za.ac.cput.school_management.domain.StudentAddress;
 import za.ac.cput.school_management.repository.StudentAddressRepository;
 import za.ac.cput.school_management.service.StudentAddress.IStudentAddressService;
 
+import java.util.List;
+
 
 @Service
 public class StudentAddressServiceImpl implements IStudentAddressService {

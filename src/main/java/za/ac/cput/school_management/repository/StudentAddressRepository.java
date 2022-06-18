@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.StudentAddress;
 
 @Repository
-public interface StudentAddressRepository<String> extends JpaRepository<StudentAddress, String> {
+public interface StudentAddressRepository extends JpaRepository<StudentAddress, String> {
 }
