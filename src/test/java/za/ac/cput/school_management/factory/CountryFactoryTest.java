@@ -6,27 +6,29 @@ package za.ac.cput.school_management.factory;
  * Country Factory Test
  *
  */
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.Country;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CountryFactoryTest {
 
-    @BeforeEach
-    void setUp() {
-    }
 
-    @AfterEach
-    void tearDown() {
+    @Test
+    void createCountry() {
+        Country country = CountryFactory.createCountry("ZA", "South Africa");
+        assertNotNull(country);
     }
 
     @Test
+    void createCountryWithEmptyId() {
+        Country country = CountryFactory.createCountry("", "South Africa");
+        assertEquals("", country.getId());
+    }
 
-    public void test(){
-        Country country = CountryFactory.createCountry("214044750","Humaam");
+    @Test
+    void createCountryWithNullName() {
+        Country country = CountryFactory.createCountry("ZA", null);
         assertNotNull(country);
     }
 }

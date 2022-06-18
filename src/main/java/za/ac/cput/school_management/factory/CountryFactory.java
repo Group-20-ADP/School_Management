@@ -8,22 +8,18 @@ package za.ac.cput.school_management.factory;
  */
 
 import za.ac.cput.school_management.domain.Country;
+import za.ac.cput.school_management.utility.Helper;
 
 public class CountryFactory {
+    public static Country createCountry(String countryId, String countryName) {
 
-    public static Country createCountry(String id, String name){
+        //Validate the parameters
+        Helper.checkStringParam(countryId, "countryId");
+        Helper.checkStringParam(countryName, "countryName");
 
-        if(id == null)
-            return null;
-
-        if(name == null)
-            return null;
-
-        return new Country.CountryBuilder()
-                .setId(id)
-                .setName(name)
-                .builder();
+        return Country.builder()
+                .id(countryId)
+                .name(countryName)
+                .build();
     }
-
-
 }

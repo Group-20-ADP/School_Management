@@ -1,4 +1,5 @@
 package za.ac.cput.school_management.domain;
+
 /**
  *
  * Humaam Mohamed
@@ -6,59 +7,37 @@ package za.ac.cput.school_management.domain;
  * Country Entity.
  *
  */
-public class Country {
 
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Embeddable
+@Entity
+public class Country implements Serializable {
+    @Id
+    @NotNull
+    @Column(
+            name = "Country_id",
+            length = 10,
+            unique = true
+    )
     private String id;
+
+    @Column(
+            name = "Country_Name"
+    )
     private String name;
-
-    private Country (CountryBuilder builder){
-
-        this.id=builder.id;
-        this.name=builder.name;
-
-    }
-
-    public String setId(String id) {
-        this.id = id;
-        return id;
-    }
-
-    public String setName(String name) {
-        this.name = name;
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return "Country{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-   public static class CountryBuilder{
-
-        private String id;
-        private String name;
-
-       public CountryBuilder setId(String id) {
-           this.id = id;
-           return this;
-       }
-
-       public CountryBuilder setName(String name) {
-           this.name = name;
-           return this;
-       }
-
-
-       public Country builder(){
-
-           return new Country(this);
-       }
-   }
-
-
-
-
 }
