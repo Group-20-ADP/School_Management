@@ -7,8 +7,16 @@ package za.ac.cput.school_management.service;
 
 import java.util.List;
 
-public interface IService <T, X>{
+public interface IService<T, ID> {
+    //Create a new record
     T create(T t);
-    List<T> readAll();
-    void delete(X x);
+
+    //Read all records
+    List<T> findAll();
+
+    //Read a record by its ID
+    T findById(ID id);
+
+    //Delete a record by its ID
+    void delete(ID id);
 }
