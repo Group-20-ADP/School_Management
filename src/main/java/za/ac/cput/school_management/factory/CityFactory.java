@@ -9,26 +9,21 @@ package za.ac.cput.school_management.factory;
  */
 
 import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.Country;
+import za.ac.cput.school_management.utility.Helper;
 
 public class CityFactory {
+    public static City createCity(String cityId, String cityName, Country country) {
 
-    public static City createCity(String cityId, String cityName) {
+        //Validate the parameters
+        Helper.checkStringParam(cityId, "cityId");
+        Helper.checkStringParam(cityName, "cityName");
+        Helper.checkIfObjectNull("country", country);
 
-        if (cityId == null)
-            return null;
-
-        if (cityName == null)
-            return null;
-
-
-
-        return  City.builder()
-                .cityId(cityId)
-                .cityName(cityName)
+        return City.builder()
+                .id(cityId)
+                .name(cityName)
+                .country(country)
                 .build();
-
-
-
     }
-
 }
