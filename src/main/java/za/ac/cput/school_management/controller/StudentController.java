@@ -37,10 +37,13 @@ public class StudentController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Student> findById(@PathVariable String id) {
-        Student student = studentService.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "student not found"));
-        return ResponseEntity.ok(student);
+    public ResponseEntity<Student> readById(@PathVariable String id) {
+        try{
+            Student student = studentService.findById(id);
+            return ResponseEntity.ok(student);
+        }catch(Exception ex){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found");
+        }
     }
 
     @DeleteMapping("/delete/{id}")
