@@ -1,4 +1,9 @@
 package za.ac.cput.school_management.domain.valueobjects;
+/**
+ * Author       : Kurtney Clyde Jantjies 218138105
+ * Due Created : 18/06/2022
+ * Description  : School Management System(Milestone Project)
+ */
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;

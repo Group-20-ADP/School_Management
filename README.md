@@ -60,6 +60,7 @@ Powered By
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#improvements">Improvements</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -170,6 +171,35 @@ Project Link: [https://github.com/Group-20-ADP/School_Management](https://github
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- IMPROVEMENTS -->
+## Improvements
+
+The following were discussed during the project:
+
+###Project Structure
+Employee and Student are redundant since they have the same qualities and could have been combined to 
+produce a single entity. 
+
+###Flaws in Design and Implementation
+
+Value objects should be mutable by design due to the use of ValueObjects. There is a clash between our 
+chosen design pattern, the Builder Pattern, because they are mutable or should be mutable. It firmly 
+establishes immutability. This is a defect in the design.
+
+The requirements document may be improved further because it lacks information on which services should 
+and should not be exposed, notably the read, save, delete, and readAll services.
+
+A relationship between Employeee and EmployeeAddress is depicted using UML. Both Student and StudentAddress 
+represent the same item. However, the characteristics of all four classes exclude the formation of such a link. 
+The lack of implementation of these tables' relationships results in a disconnected relationship.
+
+Address should have been a full entity rather than a value object. This is because Address now contains an Id, 
+which may be utilized as a foreign key in the EmployeeAddress and StudentAddress Entities. This would allow 
+StudentAddress and EmployeeAddress to operate as a bridge entity, as a composite key from two Entities should. 
+The nature of the link between Employee and EmployeeAddress; Student and StudentAddress will shift to a OneToMany 
+relationship.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
