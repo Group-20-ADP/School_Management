@@ -2,12 +2,14 @@ package za.ac.cput.school_management.factory;
 
 import za.ac.cput.school_management.domain.valueobjects.Address;
 import za.ac.cput.school_management.domain.EmployeeAddress;
+import za.ac.cput.school_management.utility.Helper;
 
 public class EmployeeAddressFactory {
-    public static EmployeeAddress createEmployeeAddress(String staffId, String unitNumber, String complexName,
-                                                        String streetNumber, String streetName, int postalCode) {
-        Address address = AddressFactory.createAddress(unitNumber, complexName, streetNumber,
-                streetName, postalCode);
+    public static EmployeeAddress createEmployeeAddress(String staffId, Address address) {
+
+        Helper.checkStringParam(staffId, "staffId");
+        Helper.checkIfObjectNull("address", address);
+
         return EmployeeAddress.builder()
                 .staffId(staffId)
                 .address(address)
