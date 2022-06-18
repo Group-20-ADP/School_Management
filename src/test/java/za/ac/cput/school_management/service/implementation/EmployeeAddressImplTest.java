@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.school_management.domain.EmployeeAddress;
 import za.ac.cput.school_management.factory.EmployeeAddressFactory;
-import za.ac.cput.school_management.repository.IEmployeeAddressRepository;
+import za.ac.cput.school_management.repository.EmployeeAddressRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeAddressImplTest {
 
     @Autowired
-    private IEmployeeAddressRepository repository;
+    private EmployeeAddressRepository repository;
 
     @Test
     void create() {
