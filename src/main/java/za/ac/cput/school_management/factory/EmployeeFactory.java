@@ -10,18 +10,13 @@ import za.ac.cput.school_management.domain.valueobjects.Name;
 import za.ac.cput.school_management.utility.Helper;
 
 public class EmployeeFactory {
-    public static Employee createEmployee(String staffId, String email,
-                                          String firstName, String middleName,
-                                          String lastName){
+    public static Employee createEmployee(String staffId, String email, Name name){
 
         Helper.checkStringParam(staffId, "staffId");
         Helper.checkStringParam(email, "email");
         Helper.checkEmail(email);
-        Helper.checkStringParam(firstName, "firstName");
-        Helper.checkStringParam(middleName, "middleName");
-        Helper.checkStringParam(lastName, "lastName");
+        Helper.checkIfObjectNull("name", name);
 
-        Name name = NameFactory.createName(firstName,middleName,lastName);
         return Employee.builder()
                 .staffId(staffId)
                 .email(email)

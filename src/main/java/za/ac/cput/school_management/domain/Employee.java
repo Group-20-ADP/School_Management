@@ -5,12 +5,22 @@ package za.ac.cput.school_management.domain;
  * Description  : School Management System(Milestone Project)
  */
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import za.ac.cput.school_management.domain.valueobjects.Name;
+import lombok.*;
+import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -18,17 +28,37 @@ import java.io.Serializable;
 @Table(name = "employee")
 public class Employee implements Serializable {
     @Id
-    @Column(            name = "staff_id", length = 10)
+    @NotNull
+    @Column(name = "staff_id", length = 10)
     private String staffId;
-    @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToOne(
+            cascade = CascadeType.ALL
+    )
     @JoinColumn(name = "staff_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private EmployeeAddress employeeAddress;
 
+    @NotNull
     @Column(name = "email_address", length = 50)
     private String email;
 
+    @NotNull
     @Embedded
     private Name name;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Employee employee = (Employee) o;
+        return staffId != null && Objects.equals(staffId, employee.staffId);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
 
 

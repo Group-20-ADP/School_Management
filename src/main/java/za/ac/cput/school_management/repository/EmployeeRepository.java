@@ -11,9 +11,5 @@ import za.ac.cput.school_management.domain.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
-    //Give EmployeeName from Email
     Employee findEmployeeByEmail(String email);
-
-    //@Query("select e from Employee e where e.staffId = ?1")
-    Employee findEmployeeByStaffId(String staffId);
 }
