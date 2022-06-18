@@ -176,11 +176,11 @@ Project Link: [https://github.com/Group-20-ADP/School_Management](https://github
 
 The following were discussed during the project:
 
-###Project Structure
+### Project Structure
 Employee and Student are redundant since they have the same qualities and could have been combined to 
 produce a single entity. 
 
-###Flaws in Design and Implementation
+### Flaws in Design and Implementation
 
 Value objects should be mutable by design due to the use of ValueObjects. There is a clash between our 
 chosen design pattern, the Builder Pattern, because they are mutable or should be mutable. It firmly 
