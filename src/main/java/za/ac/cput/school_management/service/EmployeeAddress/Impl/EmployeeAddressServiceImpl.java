@@ -7,7 +7,10 @@ import za.ac.cput.school_management.repository.EmployeeAddressRepository;
 import za.ac.cput.school_management.service.EmployeeAddress.IEmployeeAddressService;
 
 import java.util.List;
-
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
 @Service
 public class EmployeeAddressServiceImpl implements IEmployeeAddressService {
 

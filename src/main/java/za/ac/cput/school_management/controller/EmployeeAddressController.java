@@ -11,6 +11,11 @@ import za.ac.cput.school_management.service.EmployeeAddress.IEmployeeAddressServ
 
 import java.util.List;
 
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
+
 @RestController
 @RequestMapping("/employee-address")
 public class EmployeeAddressController {

@@ -9,7 +9,10 @@ import za.ac.cput.school_management.domain.valueobjects.Address;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeAddressFactoryTest {
-
+    /*
+    Author: Manasseh Barnes
+    StudentNumber: 218009615
+     */
     @Test
     void createEmployeeAddress() {
         Country country = CountryFactory.createCountry("ZA", "South Africa");
@@ -26,19 +29,24 @@ class EmployeeAddressFactoryTest {
 
     @Test
     void createEmployeeAddressWithNull() {
-        EmployeeAddress employeeAddress = EmployeeAddressFactory.createEmployeeAddress(
-                "1",
-                null
-        );
-        assertNull(employeeAddress);
+        //Throw IllegalArgumentException if address is null
+        assertThrows(IllegalArgumentException.class, () -> {
+            EmployeeAddressFactory.createEmployeeAddress(
+                    "1",
+                    null
+            );
+        });
     }
 
     @Test
     void createEmployeeAddressWithEmpty() {
-        EmployeeAddress employeeAddress = EmployeeAddressFactory.createEmployeeAddress(
-                "",
-                null
-        );
-        assertNull(employeeAddress);
+        //Throw IllegalArgumentException if address is empty
+        assertThrows(IllegalArgumentException.class, () -> {
+            EmployeeAddressFactory.createEmployeeAddress(
+                    "1",
+                    AddressFactory.createAddress("", "",
+                            "", "", 2000, null)
+            );
+        });
     }
 }
