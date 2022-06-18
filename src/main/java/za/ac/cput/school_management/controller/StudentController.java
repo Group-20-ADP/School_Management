@@ -9,6 +9,7 @@ import za.ac.cput.school_management.domain.Student;
 import za.ac.cput.school_management.service.Student.IStudentService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/student")
@@ -30,14 +31,14 @@ public class StudentController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Student>> readAll() {
-        List<Student> students = studentService.readAll();
+    public ResponseEntity<List<Student>> findAll() {
+        List<Student> students = studentService.findAll();
         return ResponseEntity.ok(students);
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Student> readById(@PathVariable String id) {
-        Student student = studentService.readById(id)
+    public ResponseEntity<Student> findById(@PathVariable String id) {
+        Student student = studentService.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "student not found"));
         return ResponseEntity.ok(student);
     }

@@ -12,6 +12,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IEmployeeService extends IService<Employee, String> {
-    //employee name given an employee email
     Employee findByEmail(String email);
 }

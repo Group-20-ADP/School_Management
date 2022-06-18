@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.service.StudentAddress.Impl;
+package za.ac.cput.school_management.service.Student.Impl;
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Student;

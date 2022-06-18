@@ -1,17 +1,29 @@
 package za.ac.cput.school_management.domain.valueobjects;
 
 import com.sun.istack.NotNull;
-import lombok.*;
-import net.bytebuddy.build.HashCodeAndEqualsPlugin;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import java.util.Objects;
+import java.io.Serializable;
 
-@Embeddable
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Name {
-    private String firstName, middleName, lastName;
+@NoArgsConstructor
+@Builder
+@Embeddable
+public class Name implements Serializable {
+    @NotNull
+    @Column(name = "first_Name")
+    private String firstName;
+
+    @Column(name = "middle_Name")
+    private String middleName;
+
+    @NotNull
+    @Column(name = "last_Name")
+    private String lastName;
 }

@@ -22,27 +22,32 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee findByEmail(String email) {
-        return repository.findEmployeeByEmail(email);
-    }
-
-    @Override
     public Employee create(Employee employee) {
-        return null;
+        return repository.save(employee);
     }
 
     @Override
     public List<Employee> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
-    public Employee findById(String s) {
-        return null;
+    public Employee findById(String id) {
+        return repository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("No Employee found for id " + id));
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String id) {
+        repository.deleteById(id);
+    }
 
+    @Override
+    public Employee findByEmail(String email) {
+        try{
+            return repository.findEmployeeByEmail(email);
+        } catch (Exception ex) {
+            throw new NullPointerException("No Employee found for email " + email);
+        }
     }
 }
