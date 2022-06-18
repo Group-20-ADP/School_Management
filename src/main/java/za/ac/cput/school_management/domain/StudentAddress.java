@@ -1,12 +1,16 @@
 package za.ac.cput.school_management.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
+import lombok.*;
+import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import za.ac.cput.school_management.domain.valueobjects.Address;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Getter
 @Setter
