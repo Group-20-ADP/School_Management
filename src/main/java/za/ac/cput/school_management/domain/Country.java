@@ -18,6 +18,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
@@ -25,15 +26,13 @@ import javax.persistence.Id;
 @Builder
 @Embeddable
 @Entity
-public class Country {
+public class Country implements Serializable {
     @Id
     @NotNull
     @Column(
             name = "Country_id",
             length = 10,
-            unique = true,
-            nullable = false,
-            updatable = false
+            unique = true
     )
     private String id;
 
