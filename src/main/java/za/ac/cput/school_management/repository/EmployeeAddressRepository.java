@@ -4,7 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.EmployeeAddress;
-
+/*
+Author: Manasseh Barnes
+StudentNumber: 218009615
+ */
 @Repository
 public interface EmployeeAddressRepository extends JpaRepository<EmployeeAddress, String> {
 
