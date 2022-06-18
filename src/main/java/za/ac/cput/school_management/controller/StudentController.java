@@ -6,7 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.Student;
-import za.ac.cput.school_management.service.IStudentService;
+import za.ac.cput.school_management.service.Student.IStudentService;
 
 import java.util.List;
 

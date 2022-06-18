@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.domain.valueobjects.Name;
-import za.ac.cput.school_management.service.implementation.EmployeeService;
+import za.ac.cput.school_management.service.Employee.Impl.EmployeeService;
 
 import java.util.List;
 
