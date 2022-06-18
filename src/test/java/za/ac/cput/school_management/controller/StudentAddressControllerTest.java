@@ -18,6 +18,8 @@ import za.ac.cput.school_management.factory.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
 import za.ac.cput.school_management.factory.StudentAddressFactory;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -60,7 +62,7 @@ class StudentAddressControllerTest {
         String url = baseUrl + "/create";
         System.out.println(url);
         ResponseEntity<StudentAddress> response = this.restTemplate
-                .postForEntity(url, this.studentAddress, StudentAddress.class);
+                .postForEntity(url, studentAddress, StudentAddress.class);
         System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK,response.getStatusCode()),
@@ -71,7 +73,7 @@ class StudentAddressControllerTest {
     @Order(2)
     @Test
     void read(){
-        String url = baseUrl + "/read/" + this.studentAddress.getId();
+        String url = baseUrl + "/read/" + studentAddress.getStudentId();
         System.out.println(url);
         ResponseEntity<StudentAddress> response =
                 this.restTemplate.getForEntity(url, StudentAddress.class);
@@ -88,7 +90,7 @@ class StudentAddressControllerTest {
         String url = baseUrl + "/delete";
         System.out.println(url);
         ResponseEntity<StudentAddress> response = this.restTemplate
-                .postForEntity(url, this.studentAddress, StudentAddress.class);
+                .postForEntity(url, studentAddress, StudentAddress.class);
         this.restTemplate.delete(url);
     }
 
@@ -99,10 +101,10 @@ class StudentAddressControllerTest {
         System.out.println(url);
         ResponseEntity<StudentAddress[]> response =
                 this.restTemplate.getForEntity(url, StudentAddress[].class);
-        System.out.println(response.getBody());
+        System.out.println(response);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-                () -> assertEquals(1, response.getBody().length)
+                () -> assertEquals(1, Objects.requireNonNull(response.getBody()).length)
         );
     }
 
