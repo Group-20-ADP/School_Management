@@ -1,24 +1,35 @@
 package za.ac.cput.school_management.domain;
+/**
+ * Author       : Kurtney Clyde Jantjies 218138105
+ * Due Created : 18/06/2022
+ * Description  : School Management System(Milestone Project)
+ */
 
-import com.sun.istack.NotNull;
 import lombok.*;
+import za.ac.cput.school_management.domain.valueobjects.Name;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "EMPLOYEE")
-public class Employee {
+@Table(name = "employee")
+public class Employee implements Serializable {
     @Id
-    @NotNull
-    @Column(name = "staff_id", unique = true, updatable = false,nullable = false, length =36 )
+    @Column(            name = "staff_id", length = 10)
     private String staffId;
-    @Column(name = "email", updatable = false,nullable = false, length = 50)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "staff_id")
+    private EmployeeAddress employeeAddress;
+
+    @Column(name = "email_address", length = 50)
     private String email;
+
     @Embedded
     private Name name;
 }
+
 
 

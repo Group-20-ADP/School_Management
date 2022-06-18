@@ -1,36 +1,42 @@
-package za.ac.cput.school_management.service.implementation;
+package za.ac.cput.school_management.service.EmployeeAddress.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.EmployeeAddress;
 import za.ac.cput.school_management.repository.IEmployeeAddressRepository;
-import za.ac.cput.school_management.service.IEmployeeAddressService;
+import za.ac.cput.school_management.service.EmployeeAddress.IEmployeeAddressService;
 
 import java.util.List;
 
 @Service
 public class EmployeeAddressImpl implements IEmployeeAddressService {
 
+    private final IEmployeeAddressRepository repository;
+
+
     @Autowired
-    private IEmployeeAddressRepository repository;
+    public EmployeeAddressImpl(IEmployeeAddressRepository repository) {
+        this.repository = repository;
+    }
+
 
     @Override
     public EmployeeAddress create(EmployeeAddress employeeAddress) {
-        return repository.save(employeeAddress);
+        return null;
     }
 
     @Override
-    public EmployeeAddress read(String staffId) {
-        return repository.findById(staffId).orElse(null);
+    public List<EmployeeAddress> findAll() {
+        return null;
     }
 
     @Override
-    public List<EmployeeAddress> readAll() {
-        return repository.findAll();
+    public EmployeeAddress findById(String s) {
+        return null;
     }
 
     @Override
-    public void delete(String staffId) {
-        repository.deleteById(staffId);
+    public void delete(String s) {
+
     }
 }

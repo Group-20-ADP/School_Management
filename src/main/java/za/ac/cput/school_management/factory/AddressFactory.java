@@ -1,6 +1,6 @@
 package za.ac.cput.school_management.factory;
 
-import za.ac.cput.school_management.domain.Address;
+import za.ac.cput.school_management.domain.valueobjects.Address;
 
 public class
 
