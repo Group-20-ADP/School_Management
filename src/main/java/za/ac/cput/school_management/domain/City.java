@@ -8,62 +8,41 @@ package za.ac.cput.school_management.domain;
  *
  */
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-
-
-public class City {
-
+@NoArgsConstructor
+@Builder
+@Embeddable
+@Entity
+public class City implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "system-uuid",strategy = "uuid")
+    @NotNull
+    @Column(
+            name = "city_id",
+            length = 10,
+            unique = true
+    )
+    private String id;
 
-    @Column(name = "cityId", updatable = false,nullable = false, length = 50)
-    private String cityId;
+    @Column(
+            name = "city_Name"
+    )
+    private String name;
 
-    @Column(name = "cityName", updatable = false,nullable = false, length = 50)
-    private String cityName;
-
-    @Embedded
+    @JsonIgnore
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(
+            name = "country_id"
+    )
     private Country country;
-
-
-    private City(Builder builder){
-        this.cityId = builder.cityId;
-        this.cityName = builder.cityName;
-        this.country = builder.country;
-    }
-
-    public static class Builder{
-        private String cityId, cityName;
-        private Country country;
-
-        public Builder cityId(String cityId){
-            this.cityId = cityId;
-            return this;
-        }
-
-        public Builder cityName(String cityName){
-            this.cityName = cityName;
-            return this;
-        }
-
-        public Builder country(Country country){
-            this.country = country;
-            return this;
-        }
-
-        public City build(){
-
-
-            return new City(this);
-        }
-    }
 }
